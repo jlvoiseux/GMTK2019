@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HorreurLongue.ogg-ea26b31ad2d6d705a53353e02f3fe99e.oggstr"
+
+[deps]
+
+source_file="res://Sounds/HorreurLongue.ogg"
+dest_files=[ "res://.import/HorreurLongue.ogg-ea26b31ad2d6d705a53353e02f3fe99e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

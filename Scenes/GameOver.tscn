@@ -1,0 +1,562 @@
+[gd_scene load_steps=45 format=2]
+
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://PiskelExport/bg.png" type="Texture" id=2]
+[ext_resource path="res://PiskelExport/Letters/sprite_06.png" type="Texture" id=3]
+[ext_resource path="res://PiskelExport/Letters/sprite_00.png" type="Texture" id=4]
+[ext_resource path="res://PiskelExport/Letters/sprite_12.png" type="Texture" id=5]
+[ext_resource path="res://PiskelExport/Letters/sprite_04.png" type="Texture" id=6]
+[ext_resource path="res://PiskelExport/Letters/sprite_14.png" type="Texture" id=7]
+[ext_resource path="res://PiskelExport/Letters/sprite_21.png" type="Texture" id=8]
+[ext_resource path="res://PiskelExport/Letters/sprite_17.png" type="Texture" id=9]
+[ext_resource path="res://PiskelExport/Letters/sprite_10.png" type="Texture" id=10]
+[ext_resource path="res://PiskelExport/Letters/sprite_08.png" type="Texture" id=11]
+[ext_resource path="res://PiskelExport/Letters/sprite_11.png" type="Texture" id=12]
+[ext_resource path="res://PiskelExport/Letters/sprite_18.png" type="Texture" id=13]
+[ext_resource path="res://PiskelExport/Scores/sprite_01.png" type="Texture" id=14]
+[ext_resource path="res://PiskelExport/Scores/sprite_00.png" type="Texture" id=15]
+[ext_resource path="res://PiskelExport/Letters/sprite_23.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/KillsCount.gd" type="Script" id=17]
+[ext_resource path="res://PiskelExport/Scores/sprite_02.png" type="Texture" id=18]
+[ext_resource path="res://PiskelExport/Scores/sprite_03.png" type="Texture" id=19]
+[ext_resource path="res://PiskelExport/Scores/sprite_04.png" type="Texture" id=20]
+[ext_resource path="res://PiskelExport/Scores/sprite_05.png" type="Texture" id=21]
+[ext_resource path="res://PiskelExport/Scores/sprite_06.png" type="Texture" id=22]
+[ext_resource path="res://PiskelExport/Scores/sprite_07.png" type="Texture" id=23]
+[ext_resource path="res://PiskelExport/Scores/sprite_08.png" type="Texture" id=24]
+[ext_resource path="res://PiskelExport/Scores/sprite_09.png" type="Texture" id=25]
+[ext_resource path="res://PiskelExport/minus.png" type="Texture" id=26]
+[ext_resource path="res://Scripts/MovesCount.gd" type="Script" id=27]
+[ext_resource path="res://Scripts/MissCount.gd" type="Script" id=28]
+[ext_resource path="res://PiskelExport/Letters/sprite_05.png" type="Texture" id=29]
+[ext_resource path="res://PiskelExport/Letters/sprite_13.png" type="Texture" id=30]
+[ext_resource path="res://PiskelExport/Letters/sprite_02.png" type="Texture" id=31]
+[ext_resource path="res://Scripts/FinalScoreCount.gd" type="Script" id=32]
+[ext_resource path="res://PiskelExport/Letters/sprite_20.png" type="Texture" id=33]
+[ext_resource path="res://PiskelExport/Letters/sprite_19.png" type="Texture" id=34]
+[ext_resource path="res://PiskelExport/Letters/sprite_24.png" type="Texture" id=35]
+[ext_resource path="res://PiskelExport/Letters/sprite_01.png" type="Texture" id=36]
+[ext_resource path="res://PiskelExport/Letters/sprite_03.png" type="Texture" id=37]
+[ext_resource path="res://PiskelExport/Letters/sprite_07.png" type="Texture" id=38]
+[ext_resource path="res://Px437_IBM_BIOS.ttf" type="DynamicFontData" id=39]
+[ext_resource path="res://PiskelExport/menu_arrow.png" type="Texture" id=40]
+[ext_resource path="res://Sounds/Bruit_Score.ogg" type="AudioStream" id=41]
+[ext_resource path="res://Sounds/Bruit_Menu.ogg" type="AudioStream" id=42]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+font_data = ExtResource( 39 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( -1.75241, -2.00275 )
+scale = Vector2( 259.856, 148.11 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="GameOver" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 21.6226, 0 )
+scale = Vector2( 3, 3 )
+
+[node name="Sprite" type="Sprite" parent="GameOver"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="GameOver"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="GameOver"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="GameOver"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="GameOver"]
+position = Vector2( 40, 0 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Sprite6" type="Sprite" parent="GameOver"]
+position = Vector2( 48, 0 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Sprite7" type="Sprite" parent="GameOver"]
+position = Vector2( 56, 0 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Sprite8" type="Sprite" parent="GameOver"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Kills" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 76, 31.1215 )
+
+[node name="Sprite" type="Sprite" parent="Kills"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Kills"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="Kills"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="Kills"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="Kills"]
+position = Vector2( 32, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Mult" type="Node2D" parent="Kills"]
+position = Vector2( -46.7183, 19.5633 )
+
+[node name="Sprite10" type="Sprite" parent="Kills/Mult"]
+position = Vector2( -0.2817, 0 )
+texture = ExtResource( 14 )
+
+[node name="Sprite7" type="Sprite" parent="Kills/Mult"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 15 )
+
+[node name="Sprite8" type="Sprite" parent="Kills/Mult"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 15 )
+
+[node name="Sprite9" type="Sprite" parent="Kills/Mult"]
+position = Vector2( 31.385, 0 )
+texture = ExtResource( 16 )
+
+[node name="KillsNum" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 75.3333, 31 )
+script = ExtResource( 17 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KillsNum"]
+position = Vector2( 0, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="KillsNum"]
+position = Vector2( 8, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="KillsNum"]
+position = Vector2( 16, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="KillsNum"]
+position = Vector2( 24, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="KillsNum"]
+position = Vector2( 32, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="Moves" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 75.6253, 60 )
+
+[node name="Sprite" type="Sprite" parent="Moves"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Moves"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="Moves"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="Moves"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="Moves"]
+position = Vector2( 32, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Mult2" type="Node2D" parent="Moves"]
+position = Vector2( -46.3436, 20.5452 )
+
+[node name="Sprite8" type="Sprite" parent="Moves/Mult2"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 18 )
+
+[node name="Sprite9" type="Sprite" parent="Moves/Mult2"]
+position = Vector2( 31.385, 0 )
+texture = ExtResource( 16 )
+
+[node name="Sprite10" type="Sprite" parent="Moves/Mult2"]
+position = Vector2( -15.2817, 0 )
+texture = ExtResource( 26 )
+
+[node name="MovesNum" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 75.6253, 60 )
+script = ExtResource( 27 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="MovesNum"]
+position = Vector2( 0, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="MovesNum"]
+position = Vector2( 8, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="MovesNum"]
+position = Vector2( 16, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="MovesNum"]
+position = Vector2( 24, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="MovesNum"]
+position = Vector2( 32, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="Miss" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 76.5012, 89 )
+
+[node name="Sprite" type="Sprite" parent="Miss"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Miss"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="Miss"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="Miss"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Mult2" type="Node2D" parent="Miss"]
+position = Vector2( -47.2196, 20.2171 )
+
+[node name="Sprite11" type="Sprite" parent="Miss/Mult2"]
+position = Vector2( -15.2817, 1 )
+texture = ExtResource( 26 )
+
+[node name="Sprite7" type="Sprite" parent="Miss/Mult2"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 18 )
+
+[node name="Sprite8" type="Sprite" parent="Miss/Mult2"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 15 )
+
+[node name="Sprite9" type="Sprite" parent="Miss/Mult2"]
+position = Vector2( 31.385, 0 )
+texture = ExtResource( 16 )
+
+[node name="MissNum" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 76.5012, 89 )
+script = ExtResource( 28 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="MissNum"]
+position = Vector2( 0, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="MissNum"]
+position = Vector2( 8, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="MissNum"]
+position = Vector2( 16, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="MissNum"]
+position = Vector2( 24, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="MissNum"]
+position = Vector2( 32, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="FinalScore" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 147, 39 )
+
+[node name="Sprite" type="Sprite" parent="FinalScore"]
+texture = ExtResource( 29 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="FinalScore"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="FinalScore"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="FinalScore"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="FinalScore"]
+position = Vector2( 32, 0 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite6" type="Sprite" parent="FinalScore"]
+position = Vector2( 48, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite7" type="Sprite" parent="FinalScore"]
+position = Vector2( 56, 0 )
+texture = ExtResource( 31 )
+centered = false
+
+[node name="Sprite8" type="Sprite" parent="FinalScore"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Sprite9" type="Sprite" parent="FinalScore"]
+position = Vector2( 72, 0 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Sprite10" type="Sprite" parent="FinalScore"]
+position = Vector2( 80, 0 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="FinalScoreNum" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 151, 22 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 32 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="FinalScoreNum"]
+position = Vector2( 0, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="FinalScoreNum"]
+position = Vector2( 8, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="FinalScoreNum"]
+position = Vector2( 16, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="FinalScoreNum"]
+position = Vector2( 24, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="FinalScoreNum"]
+position = Vector2( 32, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="Menu" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 11, 132 )
+
+[node name="Sprite" type="Sprite" parent="Menu"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Menu"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="Menu"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="Menu"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Retry" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 79, 132 )
+
+[node name="Sprite" type="Sprite" parent="Retry"]
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Retry"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="Retry"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 34 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="Retry"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="Retry"]
+position = Vector2( 32, 0 )
+texture = ExtResource( 35 )
+centered = false
+
+[node name="Book" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 169, 132 )
+
+[node name="Sprite8" type="Sprite" parent="Book"]
+position = Vector2( 47, 0 )
+texture = ExtResource( 36 )
+centered = false
+
+[node name="Sprite9" type="Sprite" parent="Book"]
+position = Vector2( 55, 0 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Sprite10" type="Sprite" parent="Book"]
+position = Vector2( 63, 0 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Sprite11" type="Sprite" parent="Book"]
+position = Vector2( 71, 0 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Book"]
+position = Vector2( -16, 0 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Book"]
+position = Vector2( -8, 0 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="Book"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="Book"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 37 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="Book"]
+position = Vector2( 19, 0 )
+texture = ExtResource( 34 )
+centered = false
+
+[node name="Sprite6" type="Sprite" parent="Book"]
+position = Vector2( 27, 0 )
+texture = ExtResource( 38 )
+centered = false
+
+[node name="Sprite7" type="Sprite" parent="Book"]
+position = Vector2( 35, 0 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="NoBook" type="Node2D" parent="."]
+position = Vector2( 76, 23 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NoBook"]
+margin_left = 71.0
+margin_top = 49.8785
+margin_right = 220.0
+margin_bottom = 93.8785
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "
+REACH 500 TO OBTAIN A BOOK ABOUT SNAKES"
+
+[node name="BookObtained" type="Node2D" parent="."]
+position = Vector2( 171, 85 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BookObtained"]
+margin_left = -24.0
+margin_top = -4.0
+margin_right = 82.0
+margin_bottom = 40.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "BOOK ABOUT SNAKES OBTAINED ! "
+
+[node name="menu_arrow" type="Sprite" parent="."]
+position = Vector2( 147, 136 )
+texture = ExtResource( 40 )
+
+[node name="tap" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 41 )
+volume_db = -20.0
+
+[node name="tapMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 42 )
+volume_db = -20.0
+

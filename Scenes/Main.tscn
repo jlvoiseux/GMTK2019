@@ -1,0 +1,3657 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://PiskelExport/bg.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Grid.gd" type="Script" id=3]
+[ext_resource path="res://PiskelExport/Binary/sprite_1.png" type="Texture" id=4]
+[ext_resource path="res://PiskelExport/Binary/sprite_7.png" type="Texture" id=5]
+[ext_resource path="res://PiskelExport/Binary/sprite_3.png" type="Texture" id=6]
+[ext_resource path="res://PiskelExport/Binary/sprite_2.png" type="Texture" id=7]
+[ext_resource path="res://PiskelExport/Binary/sprite_4.png" type="Texture" id=8]
+[ext_resource path="res://PiskelExport/Binary/sprite_5.png" type="Texture" id=9]
+[ext_resource path="res://PiskelExport/Binary/sprite_0.png" type="Texture" id=10]
+[ext_resource path="res://PiskelExport/Letters/sprite_10.png" type="Texture" id=11]
+[ext_resource path="res://PiskelExport/Letters/sprite_08.png" type="Texture" id=12]
+[ext_resource path="res://PiskelExport/Letters/sprite_11.png" type="Texture" id=13]
+[ext_resource path="res://PiskelExport/Letters/sprite_18.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/KillsCount.gd" type="Script" id=15]
+[ext_resource path="res://PiskelExport/Scores/sprite_00.png" type="Texture" id=16]
+[ext_resource path="res://PiskelExport/Scores/sprite_01.png" type="Texture" id=17]
+[ext_resource path="res://PiskelExport/Scores/sprite_02.png" type="Texture" id=18]
+[ext_resource path="res://PiskelExport/Scores/sprite_03.png" type="Texture" id=19]
+[ext_resource path="res://PiskelExport/Scores/sprite_04.png" type="Texture" id=20]
+[ext_resource path="res://PiskelExport/Scores/sprite_05.png" type="Texture" id=21]
+[ext_resource path="res://PiskelExport/Scores/sprite_06.png" type="Texture" id=22]
+[ext_resource path="res://PiskelExport/Scores/sprite_07.png" type="Texture" id=23]
+[ext_resource path="res://PiskelExport/Scores/sprite_08.png" type="Texture" id=24]
+[ext_resource path="res://PiskelExport/Scores/sprite_09.png" type="Texture" id=25]
+[ext_resource path="res://PiskelExport/Letters/sprite_12.png" type="Texture" id=26]
+[ext_resource path="res://PiskelExport/Letters/sprite_14.png" type="Texture" id=27]
+[ext_resource path="res://PiskelExport/Letters/sprite_21.png" type="Texture" id=28]
+[ext_resource path="res://PiskelExport/Letters/sprite_04.png" type="Texture" id=29]
+[ext_resource path="res://Scripts/MovesCount.gd" type="Script" id=30]
+[ext_resource path="res://Scripts/MissCount.gd" type="Script" id=31]
+[ext_resource path="res://Sounds/Bruit_Deplacement.ogg" type="AudioStream" id=32]
+[ext_resource path="res://Sounds/Bruit_Tir.ogg" type="AudioStream" id=33]
+[ext_resource path="res://Sounds/Bruit_Points.ogg" type="AudioStream" id=34]
+[ext_resource path="res://Sounds/Bruit_Recharge.ogg" type="AudioStream" id=35]
+[ext_resource path="res://Sounds/HorreurLongue.ogg" type="AudioStream" id=36]
+[ext_resource path="res://Px437_IBM_BIOS.ttf" type="DynamicFontData" id=37]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Shake"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.03915, -1.7949 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 37 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( -1.75241, -2.00275 )
+scale = Vector2( 259.856, 148.11 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Grid" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( -23.5261, -3.41373 )
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite257" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite258" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite259" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite260" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite261" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite262" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite263" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite264" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite265" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite266" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite267" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite268" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite269" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite270" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite271" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite272" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 120, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite273" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 128, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite274" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 136, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite275" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 144, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite276" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 152, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite277" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 160, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite278" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 168, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite279" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 176, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite280" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 184, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite281" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 192, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite282" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 200, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite283" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 208, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite284" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 216, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite285" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 224, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite286" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 232, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite287" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 240, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite288" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 64 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Grid"]
+visible = false
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite12" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite13" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite14" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite15" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite16" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 120, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite17" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 128, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite18" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 136, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite19" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 144, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite20" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 152, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite21" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 160, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite22" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 168, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite23" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 176, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite24" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 184, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite25" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 192, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite26" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 200, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite27" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 208, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite28" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 216, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite29" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 224, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite30" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 232, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite31" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 240, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite32" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 0 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite33" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite34" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite35" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite36" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite37" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite38" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite39" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite40" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite41" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite42" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite43" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite44" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite45" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite46" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite47" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite48" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 120, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite49" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 128, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite50" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 136, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite51" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 144, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite52" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 152, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite53" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 160, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite54" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 168, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite55" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 176, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite56" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 184, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite57" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 192, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite58" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 200, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite59" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 208, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite60" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 216, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite61" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 224, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite62" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 232, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite63" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 240, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite64" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 8 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite65" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite66" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite67" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite68" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite69" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite70" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite71" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite72" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite73" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite74" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite75" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite76" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite77" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite78" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite79" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite80" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 120, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite81" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 128, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite82" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 136, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite83" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 144, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite84" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 152, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite85" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 160, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite86" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 168, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite87" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 176, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite88" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 184, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite89" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 192, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite90" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 200, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite91" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 208, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite92" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 216, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite93" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 224, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite94" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 232, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite95" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 240, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite96" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 16 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite97" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite98" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite99" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite100" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite101" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite102" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite103" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite104" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite105" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite106" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite107" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite108" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite109" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite110" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite111" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite112" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 120, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite113" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 128, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite114" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 136, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite115" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 144, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite116" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 152, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite117" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 160, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite118" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 168, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite119" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 176, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite120" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 184, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite121" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 192, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite122" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 200, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite123" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 208, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite124" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 216, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite125" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 224, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite126" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 232, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite127" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 240, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite128" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 24 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite129" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite130" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite131" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite132" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite133" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite134" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite135" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite136" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite137" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite138" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite139" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite140" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite141" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite142" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite143" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite144" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 120, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite145" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 128, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite146" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 136, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite147" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 144, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite148" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 152, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite149" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 160, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite150" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 168, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite151" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 176, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite152" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 184, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite153" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 192, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite154" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 200, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite155" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 208, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite156" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 216, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite157" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 224, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite158" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 232, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite159" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 240, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite160" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 32 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite161" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite162" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite163" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite164" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite165" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite166" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite167" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite168" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite169" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite170" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite171" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite172" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite173" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite174" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite175" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite176" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 120, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite177" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 128, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite178" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 136, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite179" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 144, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite180" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 152, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite181" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 160, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite182" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 168, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite183" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 176, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite184" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 184, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite185" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 192, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite186" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 200, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite187" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 208, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite188" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 216, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite189" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 224, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite190" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 232, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite191" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 240, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite192" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 40 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite193" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite194" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite195" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite196" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite197" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite198" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite199" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite200" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite201" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite202" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite203" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite204" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite205" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite206" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite207" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite208" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 120, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite209" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 128, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite210" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 136, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite211" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 144, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite212" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 152, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite213" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 160, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite214" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 168, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite215" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 176, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite216" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 184, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite217" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 192, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite218" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 200, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite219" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 208, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite220" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 216, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite221" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 224, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite222" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 232, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite223" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 240, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite224" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 48 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite225" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite226" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite227" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite228" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite229" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite230" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite231" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite232" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite233" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite234" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite235" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite236" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite237" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite238" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite239" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite240" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 120, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite241" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 128, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite242" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 136, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite243" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 144, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite244" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 152, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite245" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 160, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite246" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 168, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite247" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 176, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite248" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 184, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite249" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 192, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite250" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 200, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite251" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 208, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite252" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 216, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite253" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 224, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite254" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 232, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite255" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 240, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite256" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 56 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite289" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite290" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite291" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite292" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite293" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite294" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite295" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite296" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite297" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite298" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite299" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite300" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite301" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite302" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite303" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite304" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 120, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite305" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 128, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite306" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 136, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite307" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 144, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite308" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 152, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite309" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 160, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite310" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 168, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite311" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 176, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite312" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 184, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite313" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 192, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite314" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 200, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite315" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 208, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite316" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 216, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite317" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 224, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite318" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 232, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite319" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 240, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite320" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 72 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite321" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite322" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite323" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite324" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite325" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite326" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite327" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite328" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite329" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite330" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite331" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite332" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite333" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite334" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite335" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite336" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 120, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite337" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 128, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite338" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 136, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite339" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 144, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite340" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 152, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite341" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 160, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite342" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 168, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite343" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 176, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite344" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 184, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite345" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 192, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite346" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 200, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite347" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 208, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite348" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 216, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite349" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 224, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite350" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 232, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite351" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 240, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite352" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 80 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite353" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite354" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite355" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite356" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite357" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite358" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite359" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite360" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite361" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite362" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite363" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite364" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite365" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite366" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite367" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite368" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 120, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite369" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 128, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite370" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 136, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite371" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 144, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite372" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 152, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite373" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 160, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite374" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 168, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite375" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 176, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite376" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 184, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite377" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 192, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite378" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 200, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite379" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 208, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite380" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 216, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite381" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 224, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite382" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 232, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite383" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 240, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite384" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 88 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite385" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite386" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite387" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite388" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite389" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite390" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite391" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite392" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite393" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite394" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite395" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite396" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite397" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite398" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite399" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite400" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 120, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite401" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 128, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite402" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 136, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite403" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 144, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite404" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 152, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite405" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 160, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite406" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 168, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite407" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 176, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite408" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 184, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite409" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 192, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite410" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 200, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite411" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 208, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite412" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 216, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite413" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 224, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite414" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 232, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite415" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 240, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite416" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 96 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite417" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite418" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite419" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite420" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite421" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite422" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite423" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite424" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite425" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite426" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite427" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite428" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite429" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite430" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite431" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite432" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 120, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite433" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 128, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite434" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 136, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite435" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 144, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite436" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 152, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite437" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 160, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite438" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 168, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite439" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 176, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite440" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 184, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite441" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 192, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite442" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 200, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite443" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 208, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite444" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 216, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite445" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 224, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite446" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 232, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite447" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 240, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite448" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 104 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite449" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite450" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite451" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite452" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite453" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite454" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite455" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite456" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite457" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite458" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite459" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite460" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite461" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite462" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite463" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite464" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 120, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite465" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 128, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite466" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 136, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite467" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 144, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite468" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 152, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite469" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 160, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite470" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 168, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite471" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 176, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite472" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 184, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite473" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 192, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite474" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 200, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite475" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 208, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite476" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 216, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite477" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 224, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite478" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 232, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite479" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 240, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite480" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 112 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite481" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite482" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite483" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite484" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite485" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite486" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite487" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite488" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite489" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite490" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite491" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite492" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite493" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite494" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite495" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite496" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 120, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite497" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 128, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite498" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 136, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite499" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 144, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite500" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 152, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite501" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 160, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite502" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 168, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite503" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 176, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite504" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 184, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite505" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 192, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite506" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 200, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite507" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 208, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite508" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 216, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite509" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 224, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite510" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 232, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite511" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 240, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite512" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 120 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite513" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite514" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite515" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite516" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite517" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite518" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite519" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite520" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite521" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite522" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite523" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite524" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite525" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite526" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite527" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite528" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 120, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite529" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 128, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite530" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 136, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite531" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 144, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite532" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 152, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite533" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 160, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite534" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 168, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite535" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 176, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite536" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 184, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite537" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 192, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite538" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 200, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite539" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 208, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite540" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 216, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite541" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 224, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite542" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 232, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite543" type="AnimatedSprite" parent="Grid"]
+position = Vector2( 240, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite544" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 128 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite545" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 0, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite546" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 8, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite547" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 16, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite548" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 24, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite549" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 32, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite550" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 40, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite551" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 48, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite552" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 56, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite553" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 64, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite554" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 72, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite555" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 80, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite556" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 88, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite557" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 96, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite558" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 104, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite559" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 112, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite560" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 120, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite561" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 128, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite562" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 136, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite563" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 144, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite564" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 152, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite565" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 160, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite566" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 168, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite567" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 176, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite568" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 184, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite569" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 192, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite570" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 200, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite571" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 208, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite572" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 216, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite573" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 224, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite574" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 232, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite575" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 240, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="AnimatedSprite576" type="AnimatedSprite" parent="Grid"]
+visible = false
+position = Vector2( 248, 136 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="Shake" type="AnimationPlayer" parent="Grid"]
+anims/Shake = SubResource( 2 )
+
+[node name="BgUI" type="Sprite" parent="."]
+position = Vector2( -1.75241, -2.00275 )
+scale = Vector2( 49.0034, 148.11 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="BgUI2" type="Sprite" parent="."]
+position = Vector2( -1.75241, -2.31011 )
+scale = Vector2( 259.029, 39.4918 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="BgUI3" type="Sprite" parent="."]
+position = Vector2( 1.67336, 140.364 )
+scale = Vector2( 259.029, 5.45539 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="BgUI4" type="Sprite" parent="."]
+position = Vector2( 1.67336, 53.2364 )
+scale = Vector2( 77.8427, 92.5832 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="BgUI5" type="Sprite" parent="."]
+position = Vector2( 252.577, 52.9444 )
+scale = Vector2( 4.54818, 92.5832 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="UI" type="Node2D" parent="."]
+position = Vector2( 9.10941, 12.6785 )
+
+[node name="Kills" type="Node2D" parent="UI"]
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="UI/Kills"]
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="UI/Kills"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="UI/Kills"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="UI/Kills"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="UI/Kills"]
+position = Vector2( 32, 0 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="KillsNum" type="Node2D" parent="UI"]
+editor/display_folded = true
+script = ExtResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="UI/KillsNum"]
+position = Vector2( 0, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="UI/KillsNum"]
+position = Vector2( 8, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="UI/KillsNum"]
+position = Vector2( 16, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="UI/KillsNum"]
+position = Vector2( 24, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="UI/KillsNum"]
+position = Vector2( 32, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="Moves" type="Node2D" parent="UI"]
+editor/display_folded = true
+position = Vector2( 0, 40 )
+
+[node name="Sprite" type="Sprite" parent="UI/Moves"]
+texture = ExtResource( 26 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="UI/Moves"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="UI/Moves"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="UI/Moves"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="UI/Moves"]
+position = Vector2( 32, 0 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="MovesNum" type="Node2D" parent="UI"]
+editor/display_folded = true
+position = Vector2( 0, 40 )
+script = ExtResource( 30 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="UI/MovesNum"]
+position = Vector2( 0, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="UI/MovesNum"]
+position = Vector2( 8, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="UI/MovesNum"]
+position = Vector2( 16, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="UI/MovesNum"]
+position = Vector2( 24, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="UI/MovesNum"]
+position = Vector2( 32, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="Miss" type="Node2D" parent="UI"]
+editor/display_folded = true
+position = Vector2( 0, 80 )
+
+[node name="Sprite" type="Sprite" parent="UI/Miss"]
+texture = ExtResource( 26 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="UI/Miss"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="UI/Miss"]
+position = Vector2( 16, 0 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="UI/Miss"]
+position = Vector2( 24, 0 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="MissNum" type="Node2D" parent="UI"]
+editor/display_folded = true
+position = Vector2( 0, 80 )
+script = ExtResource( 31 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="UI/MissNum"]
+position = Vector2( 0, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="UI/MissNum"]
+position = Vector2( 8, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="UI/MissNum"]
+position = Vector2( 16, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="UI/MissNum"]
+position = Vector2( 24, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="UI/MissNum"]
+position = Vector2( 32, 16 )
+frames = SubResource( 3 )
+centered = false
+
+[node name="Move" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 32 )
+volume_db = -45.0
+
+[node name="Fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 33 )
+volume_db = -30.0
+
+[node name="Points" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 34 )
+volume_db = -35.0
+
+[node name="Eat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 35 )
+volume_db = -35.0
+
+[node name="Horror" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 36 )
+volume_db = -35.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 76.5181
+margin_top = 0.311038
+margin_right = 302.518
+margin_bottom = 59.3111
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "
+MOVE TOWARDS THE 
+
+ONCE YOU HAVE EATEN, 
+SHOOT THE "
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 210.0
+margin_top = -0.47575
+margin_right = 254.0
+margin_bottom = 29.5243
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0.254902, 0.862745, 1 )
+text = "
+FOOD"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 157.489
+margin_top = 36.4598
+margin_right = 231.489
+margin_bottom = 48.4598
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0.984314, 0.988235, 0.333333, 1 )
+text = "TARGET"
+

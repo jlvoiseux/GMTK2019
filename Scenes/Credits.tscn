@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Credits.gd" type="Script" id=1]
+[ext_resource path="res://PiskelExport/bg.png" type="Texture" id=2]
+[ext_resource path="res://1980XX.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( -1.75241, -2.00275 )
+scale = Vector2( 259.856, 148.11 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 298.0
+margin_bottom = 143.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "A GAME BY AUGST AND JLV
+MADE DURING GMTK 2019 (THEME : ONLY ONE) 
+
+TOOLS
+POWERED BY GODOT V3.1 STABLE
+GRAPHICS : PISKEL
+AUDIO : BOSCA CEOIL, AUDACITY
+ADDITIONAL FONT : 1980XX BY VOID
+
+PRESS SPACE TO RETURN TO THE MENU
+"
+scroll_active = false
+

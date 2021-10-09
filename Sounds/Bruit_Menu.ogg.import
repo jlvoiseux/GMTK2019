@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bruit_Menu.ogg-ce4e10c6f78b02306328066a4804c9a4.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Bruit_Menu.ogg"
+dest_files=[ "res://.import/Bruit_Menu.ogg-ce4e10c6f78b02306328066a4804c9a4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

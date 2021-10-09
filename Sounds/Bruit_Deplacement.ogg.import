@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bruit_Deplacement.ogg-752126b46f6156f5090e8dedc95b769c.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Bruit_Deplacement.ogg"
+dest_files=[ "res://.import/Bruit_Deplacement.ogg-752126b46f6156f5090e8dedc95b769c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

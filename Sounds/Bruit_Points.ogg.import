@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bruit_Points.ogg-c3cf61a615dd546ee84a0cf658a7c281.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Bruit_Points.ogg"
+dest_files=[ "res://.import/Bruit_Points.ogg-c3cf61a615dd546ee84a0cf658a7c281.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
